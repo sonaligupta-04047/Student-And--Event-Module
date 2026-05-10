@@ -1,0 +1,224 @@
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+  --primary: #0b3c5d;
+  --secondary: #1f5a8a;
+  --accent: #d4af37;
+  --bg: #f8fafc;
+  --text: #1e293b;
+  --muted: #64748b;
+}
+
+/* ================= GLOBAL RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY STYLE ================= */
+
+body {
+
+  /* Main Website Font */
+  font-family: "DM Sans", sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+
+  /* Prevent Horizontal Scroll */
+  overflow-x: hidden;
+
+  line-height: 1.6;
+}
+
+/* ================= BANNER SECTION ================= */
+
+.hero {
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+}
+
+.overlay h1 {
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.overlay h1:hover {
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+}
+/* ================= FADE ANIMATION ================= */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= GRID CONTAINER ================= */
+
+.grid-container {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  max-width: 1200px;
+
+  margin: 40px auto;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= GRID ITEM ================= */
+
+.grid-item {
+
+  height: 450px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 40px;
+
+  overflow: hidden;
+}
+
+/* ================= IMAGE SECTION ================= */
+
+.image-box {
+
+  padding: 0;
+}
+
+.image-box img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+/* Image Hover Zoom */
+.image-box img:hover {
+
+  transform: scale(1.05);
+}
+
+/* ================= CONTENT SECTION ================= */
+
+.content-box {
+
+  background-color: #ffffff;
+
+  color: var(--text);
+}
+
+/* Alternate Background */
+.content-box-light {
+
+  background-color: var(--secondary);
+
+  color: white;
+}
+
+/* ================= HEADING ================= */
+
+.content-box h2 {
+
+  margin-bottom: 15px;
+
+  font-size: 28px;
+
+  color: var(--primary);
+}
+
+/* White Heading for Dark Box */
+.content-box-light h2 {
+
+  color: white;
+}
+
+/* ================= PARAGRAPH ================= */
+
+.content-box p {
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: var(--muted);
+}
+
+/* White Text for Dark Box */
+.content-box-light p {
+
+  color: #e2e8f0;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 768px) {
+
+  /* Banner Height */
+  .banner {
+    height: 40vh;
+  }
+
+  /* Hero Heading */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  /* Stack Grid in Mobile */
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Auto Height */
+  .grid-item {
+    height: auto;
+  }
+
+  /* Padding Reduce */
+  .content-box {
+    padding: 30px 20px;
+  }
+
+  /* Paragraph Font */
+  .content-box p {
+    font-size: 14px;
+  }
+}
